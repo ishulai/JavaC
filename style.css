@@ -1,0 +1,403 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,500,300,100);
+
+html, body {
+	margin: 0;
+	padding: 0;
+	height:100%;
+}
+
+#left {
+	float:left;
+	height:100%;
+	width:400px;
+	padding:0;
+}
+
+#right {
+	float:left;
+	height:100%;
+	width:calc(100% - 400px);
+	padding:0;
+}
+
+#sidebar {
+	width:360px;
+	background:#333;
+	height:calc(100% - 200px);
+	padding-left: 20px;
+	padding-right: 20px;
+	overflow-y:auto;
+	overflow-x:hidden;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+#codepad {
+	width:100%;
+	height:200px;
+	background:#555;
+	position:relative;
+}
+
+#codepad h3 {
+	margin-left:20px;
+}
+
+#codepad input {
+	width:calc(100% - 21px);
+	height:35px;
+	background:#333;
+	position:absolute;
+	bottom:0;
+	border:0;
+	-webkit-appearance:none;
+	border-radius:0;
+	outline:0;
+	padding-left:20px;
+	font-family:monospace;
+	color:#fff;
+	font-size:13px;
+}
+
+#codepad .output {
+	height: 100px;
+	padding: 0 20px 0 20px;
+	color:#fff;
+	font-family:monospace;
+	font-size:13px;
+	line-height:15px;
+	overflow: auto;
+}
+
+#codepad .output .result {
+	color:#05F225;
+}
+
+#menu {
+	background:#151515;
+	height:39px;
+	width:100%;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+#bar {
+	height:23px;
+	background:#000;
+	border-bottom:1px dashed #bbb;
+	padding-left:60px;
+	color:#bbb;
+	font-family:roboto;
+	font-size:12px;
+	padding-top:8px;
+	font-weight:100;
+}
+
+#editor {
+	width:100%;
+	height:calc(100% - 271px);
+	float:left;
+	background:#000;
+}
+
+#terminal {
+	width:100%;
+	height:200px;
+	float:left;
+	background:#000;
+}
+
+#terminal h3 {
+	padding-left: 20px;
+}
+
+#terminal .code {
+	font-family: monospace;
+	white-space: pre;
+	padding-left: 20px;
+	color: #fff;
+	overflow: auto;
+	height: 144px;
+}
+
+.CodeMirror {
+	width:100%;
+	height:100% !important;
+	font-size:15px;
+	line-height:20px;
+}
+
+ul {
+	padding:0;
+	margin:0;
+}
+
+li {
+	list-style: none;
+	color:#fff;
+	font-family:roboto;
+	font-size:12px;
+	padding:5px;
+	width:100%;
+	padding-left:40px;
+	margin-left:0;
+	cursor:pointer;
+	margin-bottom:5px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+h3 {
+	font-family: roboto;
+	font-weight:500;
+	font-size:14px;
+	text-transform:uppercase;
+	color:#fff;
+	margin:0;
+	padding-top:20px;
+	padding-bottom:20px;
+}
+
+.folder {
+	background: url("folder.png");
+	background-repeat: no-repeat;
+	background-size:15px 15px;
+	background-position:15px 4px;
+}
+
+.file {
+	background: url("file.png");
+	background-repeat: no-repeat;
+	background-size:15px 15px;
+	background-position:15px 4px;
+}
+
+li:hover {
+	background-color: #555;
+}
+
+.empty {
+	background: url("empty.png");
+	background-repeat: no-repeat;
+	background-size:10px 10px;
+	background-position:15px 7px;
+	cursor:auto;
+}
+
+.empty:hover {
+	background-color: #333;
+}
+
+ul ul {
+	margin-left: 22px;
+	border-left: 1px dashed #fff;
+	padding-left: 3px;
+}
+
+.button {
+	height:25px;
+	color:#fff;
+	font-family:roboto;
+	text-transform:uppercase;
+	font-weight:500;
+	font-size:12px;
+	display:inline-block;
+	padding-top:14px;
+	cursor:pointer;
+	width:100px;
+	text-align:center;
+}
+
+.button:nth-child(1) {
+	margin-left:60px;
+}
+
+.button:hover {
+	background:#333;
+}
+
+.saved {
+	height:25px;
+	color:#666;
+	font-family:roboto;
+	text-transform:uppercase;
+	font-weight:500;
+	font-size:12px;
+	display:inline-block;
+	padding-top:14px;
+	cursor:auto;
+	width:100px;
+	text-align:center;
+	display:none;
+}
+
+.project, .class {
+	width:140px;
+	background:#55758a;
+	color:#fff;
+	font-size:13px;
+	font-weight:300;
+	font-family:roboto;
+	padding:15px 15px 15px 15px;
+	margin-right:20px;
+	float:left;
+	text-align:center;
+	vertical-align: middle;
+	cursor:pointer;
+	margin-bottom:20px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.class {
+	background: repeating-linear-gradient(
+    45deg,
+    #55758a,
+    #55758a 10px,
+    #48829a 10px,
+    #48829a 20px
+  );
+}
+
+.class.compiled {
+	background:#55758a;
+}
+
+.project:nth-child(2n + 1), .class:nth-child(2n + 1) {
+	margin-right:0;
+}
+
+.project:hover, .class:hover {
+	background:#48829a;
+}
+
+.create {
+	border:2px dashed #bbb;
+	padding:20px;
+	text-align:center;
+	color:#bbb;
+	font-family:roboto;
+	font-size:12px;
+	text-transform:uppercase;
+	cursor:pointer;
+	float:left;
+	width:315px;
+	margin-bottom: 20px;
+}
+
+.create:hover {
+	border:2px dashed #fff;
+	color:#fff;
+}
+
+#overlay {
+	z-index:100;
+	background:rgba(0, 0, 0, 0.5);
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	display:none;
+}
+
+#createproject, #createclass, #prompt, #confirm {
+	z-index:1000;
+	background:#fff;
+	position:absolute;
+	left:50%;
+	top:50%;
+	width:300px;
+	height:150px;
+	margin-left:-150px;
+	margin-top:-75px;
+	display:none;
+}
+
+h2 {
+	font-size:12px;
+	font-weight:500;
+	text-transform:uppercase;
+	font-family:roboto;
+	margin-left:20px;
+	margin-top:20px;
+}
+
+#createproject input, #createclass input, #prompt input, #confirm input {
+	margin-left:20px;
+	width:254px;
+	height:25px;
+	outline: none;
+	-webkit-appearance:none;
+	border:1px solid #ddd;
+	font-family:roboto;
+	font-size:13px;
+	margin-top:10px;
+}
+
+#createproject input:focus, #createclass input:focus, #prompt input:focus, #confirm input:focus {
+	border:1px solid #aaa;
+}
+
+#createproject button, #createclass button, #prompt button, #confirm button {
+	margin-left:20px;
+	width:117px;
+	height:28px;
+	outline: none;
+	-webkit-appearance:none;
+	border:1px solid #ddd;
+	font-family:roboto;
+	font-size:11px;
+	margin-top:20px;
+	background:#fff;
+	font-weight:500;
+	text-transform: uppercase;
+}
+
+#createproject button:active, #createclass button:active, #prompt button:active, #confirm button:active {
+	border:1px solid #aaa;
+	color:#000;
+}
+
+.back {
+	cursor:pointer;
+}
+
+.back:hover {
+	text-decoration: underline;
+}
+
+/* The whole thing */
+.custom-menu {
+    display: none;
+    z-index: 1000;
+    position: absolute;
+    overflow: hidden;
+    white-space: nowrap;
+    background: #FFF;
+    padding: 0;
+}
+
+/* Each of the items in the list */
+.custom-menu li {
+    padding: 8px 12px;
+    cursor: pointer;
+    list-style-type: none;
+    color: #333;
+    font-family: roboto;
+    font-weight:400;
+    font-size:11px;
+    text-transform: uppercase;
+}
+
+.custom-menu li:hover {
+    background-color: #DEF;
+}
